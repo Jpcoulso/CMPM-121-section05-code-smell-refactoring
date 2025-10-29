@@ -38,3 +38,9 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
 2. Under "Source", select "GitHub Actions"
 3. The workflow will automatically deploy on pushes to the `main` branch
 4. Your site will be published at `https://<your-github-username>.github.io/<repository-name>/`
+
+Section Activity:
+code smell: duplicate code
+refactor: extract funtion
+explanation: duplicate code to add event listeners to button objects, created a function that
+accepts a button HTML element and creates a listener for it.
