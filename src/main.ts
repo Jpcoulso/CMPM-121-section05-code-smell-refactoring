@@ -65,6 +65,9 @@ function setup() {
   });
 }
 
+function addListener(button: HTMLElement) {
+}
+
 function start() {
   // Call setup to initialize the UI
   setup();
