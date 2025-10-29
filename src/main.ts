@@ -18,25 +18,25 @@ function setup() {
     <button id="reset">Reset</button>
   `;
 
-  // Get the increment button element from the document
-  const bI = document.getElementById(a);
-  // Get the decrement button element from the document
-  const bD = document.getElementById("dec");
-  // Get the reset button element from the document
-  const bR = document.getElementById("reset");
-  // Get the counter span element from the document
-  const ctr = document.getElementById(b);
+  const incrementButton = document.getElementById(a);
+  const decrementButton = document.getElementById("dec");
+  const resetButton = document.getElementById("reset");
+  const counter = document.getElementById(b);
 
   // Check if any element is missing, then exit the function
-  if (!bI || !bD || !bR || !ctr) return;
+  if (!incrementButton || !decrementButton || !resetButton || !counter) return;
 
-  const buttonList: HTMLElement[] = [bI, bD, bR];
+  const buttonList: HTMLElement[] = [
+    incrementButton,
+    decrementButton,
+    resetButton,
+  ];
 
   for (const button of buttonList) {
-    addListener(button, ctr);
+    addListener(button, counter);
   }
 }
-function addListener(button: HTMLElement, ctr: HTMLElement) {
+function addListener(button: HTMLElement, counter: HTMLElement) {
   button.addEventListener("click", () => {
     if (button === document.getElementById(a)) {
       c++;
@@ -45,7 +45,7 @@ function addListener(button: HTMLElement, ctr: HTMLElement) {
     } else if (button === document.getElementById("reset")) {
       c = 0;
     }
-    ctr.innerHTML = `${c}`;
+    counter.innerHTML = `${c}`;
     document.title = "Clicked " + c;
     document.body.style.backgroundColor = c % 2 ? "pink" : "lightblue";
   });
